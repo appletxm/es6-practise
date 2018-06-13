@@ -3,13 +3,14 @@ function testable (isTestable) {
     target.isTestable = isTestable
   }
 }
-
-// @testable(true)
+@testable(true)
 class MyTestableClass {
 }
 MyTestableClass.isTestable // true
 
-// @testable(false)
+@testable(false)
 class MyClass {
 }
 MyClass.isTestable // false
+
+//--plugins=transform-runtime,transform-decorators,transform-decorators-legacy --presets=env

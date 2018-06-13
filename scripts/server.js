@@ -11,11 +11,9 @@ app.use('*', serverRouter)
 
 app.listen(port, host, function () {
   let url = 'http://' + host + ':' + port
-
   console.info('dev server started at: ', url)
-
-  setTimeout(function () {
-    let openUrl = url
-    open(openUrl, 'chrome')
-  }, 3000)
+// setTimeout(function () {
+//   let openUrl = url
+//   open(openUrl, 'chrome')
+// }, 3000)
 })
