@@ -20,10 +20,29 @@ function getHtmlFile (req, res) {
   res.end()
 }
 
+function getScriptFile (req, res) {
+  let scriptFilePath = path.join(__dirname, '..' + req.originalUrl)
+  let script = fs.readFileSync(scriptFilePath)
+
+  res.set('content-type', 'application/x-javascript')
+  res.send(script)
+  res.end()
+}
+
+function getCssFile (req, res) {
+  console.info('====get css file')
+}
+
 function assignRouter (req, res, next) {
-  console.info('****', req.baseUrl, req.originalUrl)
+  console.info('[http get]', req.baseUrl, req.originalUrl)
   if (req.originalUrl.indexOf('assets/images') >= 0) {
     getImageFile(req, res)
+  } else if (req.originalUrl.indexOf('.js') >= 0) {
+    getScriptFile(req, res)
+  } else if (req.originalUrl.indexOf('.css') >= 0) {
+    getCssFile(req, res)
+  } else if (req.originalUrl.indexOf('.html') >= 0 || req.originalUrl.indexOf('.htm') >= 0) {
+    getHtmlFile(req, res)
   } else {
     getHtmlFile(req, res)
   }
