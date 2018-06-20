@@ -17,8 +17,37 @@
 
 <body>
   <h1>test the es6 new features</h1>
+  <!--babel-standalone-->
+  <!-- <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
   <script src="node_modules/_babel-polyfill@6.26.0@babel-polyfill/dist/polyfill.min.js"></script>
-  <script src="node_modules/babel-runtime/core-js.js"></script>
-  <script src="dist/decorator.js"></script>
+  <script src="node_modules/_babel-standalone@6.26.0@babel-standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let a = 123
+    console.info(a)
+    let li = document.querySelectorAll('li')
+    let arr = Array.from(li)
+    console.info(arr)
+  </script>
+  <script type="text/babel" src="src/class-test.js"></script>
+  <script type="text/babel">
+    let subMyClass = new MyClass('mmss')
+    subMyClass.printName()
+  </script> -->
+
+  <p>input message:<b id="message"></b></p>
+  <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+  <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+  <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+  <script type="module">
+    import Greeter from './src/class-test-2.js'
+
+    let greeter = new Greeter('Hello, mm!');
+    greeter.greet();
+  </script>
 </body>
 </html>
