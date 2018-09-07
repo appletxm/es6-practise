@@ -39,24 +39,53 @@
     subMyClass.printName()
   </script> -->
 
+  <div id="test-template"></div>
+  <div id="grid-data"></div>
+  <h1>customize template</h1>
+  <div id="user-defined-tmp"></div>
+  <h1>customize complex template</h1>
+  <div id="user-defined-tmp-c"></div>
+
   <p>input message:<b id="message"></b></p>
   <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
   <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
   <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
   <script type="module">
     import Greeter from './src/class-test-2.js'
-    // import testable from './src/decorator.js'
+    // // import testable from './src/decorator.js'
 
-    let greeter = new Greeter('Hello, mm!');
-    greeter.greet();
+    let greeter = new Greeter('Hello, mm!')
+    greeter.greet()
 
     // console.info(testable)
 
     import './src/symbol.js'
-    import './src/array.js'
-    import './src/fn-default.js'
-    // import './src/promise.js'
-    import './src/fun-1.js'
+    // import './src/array.js'
+    // import './src/fn-default.js'
+    // // import './src/promise.js'
+    // import './src/fun-1.js'
+
+
+    // import varTest from './src/var.js'
+    // import deconstruction from './src/deconstruction.js'
+
+    // import templateStr from './src/string.js'
+    // templateStr.fill()
+    // templateStr.createTable()
+    // templateStr.testForTemplate()
+    // templateStr.getComplexTemp()
+
+    // import fns from './src/fns.js'
+    // fns.doFn()
+    // console.info(fns.restFn.length)
+    // fns.restFn(1,2,3,5,6,7,8,9,'abc')
+    // fns.foo(1)
+
+    // import spread from './src/spread.js'
+    // import obj from './src/obj.js'
+    // import array from './src/array.js'
+    // import setMap from './src/set-map.js'
+    import proxy from './src/proxy.js'
   </script>
 </body>
 </html>

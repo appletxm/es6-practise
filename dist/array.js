@@ -7,4 +7,10 @@ var newArr = arr.reduce(function (a, b) {
   return a * b;
 });
 
+var arr2 = [88].concat(arr);
+
+console.info('arr2:', arr2);
+
 console.info(newArr, arr);
+
+export default arr2;

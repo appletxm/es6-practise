@@ -7,4 +7,10 @@ let newArr = arr.reduce((a, b) => {
   return a * b
 })
 
+let arr2 = [88,...arr]
+
+console.info('arr2:', arr2)
+
 console.info(newArr, arr)
+
+export default arr2
