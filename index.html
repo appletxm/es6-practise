@@ -47,9 +47,13 @@
   <div id="user-defined-tmp-c"></div>
 
   <p>input message:<b id="message"></b></p>
-  <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-  <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-  <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+  <!-- <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+  <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script> -->
+
+
+  <!-- <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script> -->
+  <script src="libs/traceur.js"></script>
+  <script src="libs/BrowserSystem.js"></script>
   <script type="module">
     // import Greeter from './src/class-test-2.js'
     // // import testable from './src/decorator.js'
@@ -91,9 +95,10 @@
     // import iterator from './src/iterator.js'
     // import iterator from './src/generator.js'
     // import asyncAwait from './src/async-await.js'
-    // import es5Class from './src/es5-class.js'
+    import es5Class from './src/es5-class.js'
+    import es5ClassProto from './src/es5-class-proto.js'
     // import testable from './src/decorator.js'
-    import test from './src/test.js'
+    // import test from './src/test.js'
   </script>
 </body>
 </html>
