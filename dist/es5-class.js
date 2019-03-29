@@ -1,4 +1,16 @@
 import _Object$create from 'babel-runtime/core-js/object/create';
+function inheritClass(child, parent) {
+  var tempProto;
+  // function temp(){}
+  // temp.prototype = parent.prototype
+  // tempProto = new temp()
+  // tempProto.constructor = child
+  tempProto = _Object$create(parent.prototype);
+  tempProto.constructor = child;
+
+  return tempProto;
+}
+
 function Person(name) {
   this.name = name;
   this.color = ['red', 'green', 'yellow'];
@@ -11,20 +23,6 @@ function Worker(name, age) {
   Person.call(this, name);
   this.age = age;
 }
-
-function inheritClass(child, parent) {
-  var tempProto;
-  // function temp(){}
-  // temp.prototype = parent.prototype
-  // tempProto = new temp()
-  // tempProto.constructor = child
-
-  tempProto = _Object$create(parent.prototype);
-  tempProto.constructor = child;
-
-  return tempProto;
-}
-
 Worker.prototype = inheritClass(Worker, Person);
 Worker.prototype.getAge = function () {
   console.info('Age is ' + this.age);
@@ -55,6 +53,8 @@ Me.prototype.printTall = function () {
 };
 var me = new Me('mm', 40, 187);
 console.info(me);
+
+Person.prototype.addition = function () {};
 
 export default {
   Person: Person,

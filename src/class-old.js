@@ -26,3 +26,7 @@ function STempFn(){}
 STempFn.prototype = Child.prototype
 SecondChild.prototype = new STempFn()
 var ssChild = new SecondChild('txm3', 30)
+
+console.info(ssChild)
+
+export default {}
