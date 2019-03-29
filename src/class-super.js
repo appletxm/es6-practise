@@ -4,7 +4,7 @@ class People {
   }
 
   constructor(name) {
-    console.info(new.target.name, this)
+    console.info(new.target.name)
     this.name = name
   }
 
@@ -45,11 +45,11 @@ worker.printAge()
 let obj1 = {
   a: 1,
   fn1() {
-    console.info('obj1 fn1')
+    console.info('obj1 fn1', this.b)
   }
 }
 let obj2 = {
-  b: 1,
+  b: 2,
   fn2() {
     console.info('obj2 fn2', super.a)
     super.fn1()
