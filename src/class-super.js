@@ -1,7 +1,7 @@
 class People {
-  static stFn() {
-    console.info('People static:', this.a)
-  }
+  // static stFn() {
+  //   console.info('People static:', this.a)
+  // }
 
   constructor(name) {
     console.info(new.target.name)
@@ -13,9 +13,9 @@ class People {
   }
 }
 People.a = 123
-// People.stFn = () => {
-//   console.info('People static:', People.a)
-// }
+People.stFn = function() {
+  console.info('People static:', People.a)
+}
 
 class Worker extends People {
   constructor(name, age) {
@@ -38,25 +38,25 @@ let people = new People('xiaoxiao')
 let worker = new Worker('xiaoming', 50)
 console.info(people, worker)
 // People.stFn()
-people.sayHello()
+// people.sayHello()
 Worker.childSt()
-worker.printAge()
+// worker.printAge()
 
-let obj1 = {
-  a: 1,
-  fn1() {
-    console.info('obj1 fn1', this.b)
-  }
-}
-let obj2 = {
-  b: 2,
-  fn2() {
-    console.info('obj2 fn2', super.a)
-    super.fn1()
-  }
-}
-Object.setPrototypeOf(obj2, obj1)
-obj2.fn2()
+// let obj1 = {
+//   a: 1,
+//   fn1() {
+//     console.info('obj1 fn1', this.b)
+//   }
+// }
+// let obj2 = {
+//   b: 2,
+//   fn2() {
+//     console.info('obj2 fn2', super.a)
+//     super.fn1()
+//   }
+// }
+// Object.setPrototypeOf(obj2, obj1)
+// obj2.fn2()
 
 // console.info(global)
 
