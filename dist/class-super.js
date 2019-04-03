@@ -7,17 +7,14 @@ import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
 import _createClass from 'babel-runtime/helpers/createClass';
 
 var People = function () {
-  _createClass(People, null, [{
-    key: 'stFn',
-    value: function stFn() {
-      console.info('People static:', this.a);
-    }
-  }]);
+  // static stFn() {
+  //   console.info('People static:', this.a)
+  // }
 
   function People(name) {
     _classCallCheck(this, People);
 
-    console.info(new.target.name, this);
+    console.info(new.target.name);
     this.name = name;
   }
 
@@ -32,9 +29,9 @@ var People = function () {
 }();
 
 People.a = 123;
-// People.stFn = () => {
-//   console.info('People static:', People.a)
-// }
+People.stFn = function () {
+  console.info('People static:', People.a);
+};
 
 var Worker = function (_People) {
   _inherits(Worker, _People);
@@ -69,10 +66,26 @@ var people = new People('xiaoxiao');
 var worker = new Worker('xiaoming', 50);
 console.info(people, worker);
 // People.stFn()
-people.sayHello();
+// people.sayHello()
 Worker.childSt();
-worker.printAge();
+// worker.printAge()
 
-console.info(global)
+// let obj1 = {
+//   a: 1,
+//   fn1() {
+//     console.info('obj1 fn1', this.b)
+//   }
+// }
+// let obj2 = {
+//   b: 2,
+//   fn2() {
+//     console.info('obj2 fn2', super.a)
+//     super.fn1()
+//   }
+// }
+// Object.setPrototypeOf(obj2, obj1)
+// obj2.fn2()
 
-export default {};
+// console.info(global)
+
+// export default {}
