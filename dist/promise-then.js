@@ -28,6 +28,10 @@ time1().then(function (res) {
   console.info('---1---', err);
 }).then(function (res) {
   console.info('---3---', res);
+}).finally(function () {
+  console.info('------finaly-----');
+}).then(function (res) {
+  console.info('----4-----', res);
 });
 
 export default {};

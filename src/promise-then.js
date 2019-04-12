@@ -27,6 +27,10 @@ time1().then(res => {
   console.info('---1---', err)
 }).then(res => {
   console.info('---3---', res)
+}).finally(() => {
+  console.info('------finaly-----')
+}).then(res => {
+  console.info('----4-----', res)
 })
 
 export default {}
