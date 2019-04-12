@@ -31,4 +31,27 @@ function run (generator) {
 
 run(g)
 
+/**
+ * notice
+ * **/
+var promise = new Promise((resolve, reject) => {
+  setTimeout(function(){
+    resolve({
+      a: 3, 
+      then(){
+        console.info('====my then====')
+      },
+      catch() {
+        console.info('****my catch****')
+      }
+    })
+  }, 2000)
+})
+promise.then(res => {
+  console.info('************')
+  console.info(res)
+}).catch(err => {
+  console.info('catch:', err)
+})
+
 export default {}

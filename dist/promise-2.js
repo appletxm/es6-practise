@@ -55,4 +55,27 @@ function run(generator) {
 
 run(g);
 
+/**
+ * notice
+ * **/
+var promise = new _Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve({
+      a: 3,
+      then: function then() {
+        console.info('====my then====');
+      },
+      catch: function _catch() {
+        console.info('****my catch****');
+      }
+    });
+  }, 2000);
+});
+promise.then(function (res) {
+  console.info('************');
+  console.info(res);
+}).catch(function (err) {
+  console.info('catch:', err);
+});
+
 export default {};
