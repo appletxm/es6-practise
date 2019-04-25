@@ -13,3 +13,5 @@ let obj2 = {
 }
 Object.setPrototypeOf(obj2, obj1)
 obj2.fn2()
+
+export default {}

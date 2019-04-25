@@ -19,3 +19,5 @@ var obj2 = _obj = {
 };
 _Object$setPrototypeOf(obj2, obj1);
 obj2.fn2();
+
+export default {};
